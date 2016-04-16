@@ -424,7 +424,7 @@ namespace LeagueSharp.Common
         /// <param name="args">The <see cref="EventArgs"/> instance containing the event data.</param>
         private static void Game_OnGameUpdate(EventArgs args)
         {
-            foreach (var enemy in ObjectManager.Get<Obj_AI_Hero>().Where(e => e.IsValidTarget()))
+            /*foreach (var enemy in ObjectManager.Get<Obj_AI_Hero>().Where(e => e.IsValidTarget()))
             {
                 foreach (var spell in
                     Spells.Where(
@@ -438,7 +438,7 @@ namespace LeagueSharp.Common
                 {
                     FireOnInterruptable(enemy, spell);
                 }
-            }
+            }*/
         }
 
         /// <summary>

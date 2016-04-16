@@ -159,7 +159,7 @@ namespace LeagueSharp.Common
                 });
 
             // Trigger OnInterruptableTarget event if needed
-            if (OnInterruptableTarget != null)
+            /*if (OnInterruptableTarget != null)
             {
                 HeroManager.Enemies.ForEach(
                     enemy =>
@@ -170,7 +170,7 @@ namespace LeagueSharp.Common
                             OnInterruptableTarget(enemy, newArgs);
                         }
                     });
-            }
+            }*/
         }
 
         /// <summary>

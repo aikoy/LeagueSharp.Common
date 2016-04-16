@@ -83,7 +83,7 @@ namespace LeagueSharp.Common
             Vector3 from = new Vector3())
         {
             if (unit == null || !unit.IsValid || !unit.IsVisible || unit.IsDead || !unit.IsTargetable ||
-                unit.IsInvulnerable)
+                unit.IsInvulnerable || unit.IsZombie)
 
             {
                 return false;

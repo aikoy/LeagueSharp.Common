@@ -176,7 +176,7 @@ namespace LeagueSharp.Common
                 return;
             }
 
-            foreach (
+            /*foreach (
                 var gapcloser in
                     ActiveGapclosers.Where(gapcloser => gapcloser.Sender.IsValidTarget())
                         .Where(
@@ -186,7 +186,7 @@ namespace LeagueSharp.Common
                                  ObjectManager.Player.Distance(gapcloser.Sender, true) < 250000))) // 500 * 500
             {
                 OnEnemyGapcloser(gapcloser);
-            }
+            }*/
         }
 
         /// <summary>
