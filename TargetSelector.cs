@@ -67,28 +67,28 @@ namespace LeagueSharp.Common {
         #region Functions
 
         public static Obj_AI_Hero SelectedTarget {
-            get { return (SFXTargetSelectorEx.TargetSelector.Selected.Target); }
-            set { SFXTargetSelectorEx.TargetSelector.Selected.Target = value; }
+            get { return (SFXTargetSelector.TargetSelector.Selected.Target); }
+            set { SFXTargetSelector.TargetSelector.Selected.Target = value; }
         }
 
         /// <summary>
         ///     Sets the priority of the hero
         /// </summary>
         public static void SetPriority(Obj_AI_Hero hero, int newPriority) {
-            SFXTargetSelectorEx.TargetSelector.Priorities.SetPriority(hero, newPriority);
+            SFXTargetSelector.TargetSelector.Priorities.SetPriority(hero, newPriority);
         }
 
         /// <summary>
         ///     Returns the priority of the hero
         /// </summary>
         public static float GetPriority(Obj_AI_Hero hero) {
-            return SFXTargetSelectorEx.TargetSelector.Priorities.GetPriority(hero);
+            return SFXTargetSelector.TargetSelector.Priorities.GetPriority(hero);
         }
 
         internal static void Initialize() {
             CustomEvents.Game.OnGameLoad += args => {
                 Menu config = new Menu("Target Selector", "TargetSelector");
-                SFXTargetSelectorEx.TargetSelector.AddToMenu(config);
+                SFXTargetSelector.TargetSelector.AddToMenu(config);
                 CommonMenu.Instance.AddSubMenu(config);
             };
         }
@@ -99,17 +99,17 @@ namespace LeagueSharp.Common {
 
         public static bool IsInvulnerable(Obj_AI_Base target, DamageType damageType, bool ignoreShields = true) {
 #pragma warning disable 618
-            return SFXTargetSelectorEx.TargetSelector.IsInvulnerable(target, damageType, ignoreShields);
+            return SFXTargetSelector.TargetSelector.IsInvulnerable(target, damageType, ignoreShields);
 #pragma warning restore 618
         }
 
 
         public static void SetTarget(Obj_AI_Hero hero) {
-            SFXTargetSelectorEx.TargetSelector.Selected.Target = hero;
+            SFXTargetSelector.TargetSelector.Selected.Target = hero;
         }
 
         public static Obj_AI_Hero GetSelectedTarget() {
-            return SFXTargetSelectorEx.TargetSelector.Selected.Target;
+            return SFXTargetSelector.TargetSelector.Selected.Target;
         }
 
         public static Obj_AI_Hero GetTarget(float range,
@@ -118,7 +118,7 @@ namespace LeagueSharp.Common {
                                             IEnumerable<Obj_AI_Hero> ignoredChamps = null,
                                             Vector3? rangeCheckFrom = null) {
 #pragma warning disable 618
-            return SFXTargetSelectorEx.TargetSelector.GetTarget(range, damageType, ignoreShield, ignoredChamps,
+            return SFXTargetSelector.TargetSelector.GetTarget(range, damageType, ignoreShield, ignoredChamps,
 #pragma warning restore 618
                 rangeCheckFrom);
         }
@@ -128,7 +128,7 @@ namespace LeagueSharp.Common {
                                                        IEnumerable<Obj_AI_Hero> ignoredChamps = null,
                                                        Vector3? rangeCheckFrom = null) {
 #pragma warning disable 618
-            return SFXTargetSelectorEx.TargetSelector.GetTargetNoCollision(spell, ignoreShield, ignoredChamps,
+            return SFXTargetSelector.TargetSelector.GetTargetNoCollision(spell, ignoreShield, ignoredChamps,
 #pragma warning restore 618
                 rangeCheckFrom);
         }
@@ -140,7 +140,7 @@ namespace LeagueSharp.Common {
                                             IEnumerable<Obj_AI_Hero> ignoredChamps = null,
                                             Vector3? rangeCheckFrom = null) {
 #pragma warning disable 618
-            return SFXTargetSelectorEx.TargetSelector.GetTarget(champion, range, type, ignoreShieldSpells, ignoredChamps,
+            return SFXTargetSelector.TargetSelector.GetTarget(champion, range, type, ignoreShieldSpells, ignoredChamps,
 #pragma warning restore 618
                 rangeCheckFrom);
         }
